@@ -7,6 +7,13 @@ settings:
 importers:
 
   .:
+    dependencies:
+      core-js:
+        specifier: ^3.48.0
+        version: 3.48.0
+      regenerator-runtime:
+        specifier: ^0.14.1
+        version: 0.14.1
     devDependencies:
       '@parcel/transformer-sass':
         specifier: 2.16.4
@@ -590,6 +597,9 @@ packages:
   commander@12.1.0:
     resolution: {integrity: sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==}
     engines: {node: '>=18'}
+
+  core-js@3.48.0:
+    resolution: {integrity: sha512-zpEHTy1fjTMZCKLHUZoVeylt9XrzaIN2rbPXEt0k+q7JE5CkCZdo6bNq55bn24a69CH7ErAVLKijxJja4fw+UQ==}
 
   detect-libc@1.0.3:
     resolution: {integrity: sha512-pGjwhsmsp4kL2RTz08wcOlGN83otlqHeD/Z5T8GXZB+/YcpQ/dgo+lbU8ZsGxV0HIvqqxo9l7mqYwyYMD9bKDg==}
@@ -1622,6 +1632,8 @@ snapshots:
   color-name@1.1.4: {}
 
   commander@12.1.0: {}
+
+  core-js@3.48.0: {}
 
   detect-libc@1.0.3: {}
 

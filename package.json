@@ -2,6 +2,9 @@
   "name": "forkify",
   "version": "1.0.0",
   "description": "",
+  "source": "index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "type": "module",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html"
@@ -14,5 +17,9 @@
     "@parcel/transformer-sass": "2.16.4",
     "parcel": "^2.16.4",
     "sass": "^1.97.3"
+  },
+  "dependencies": {
+    "core-js": "^3.48.0",
+    "regenerator-runtime": "^0.14.1"
   }
 }
