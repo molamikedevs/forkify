@@ -4,6 +4,8 @@ import icons from 'url:../../img/icons.svg';
 class RecipeView {
   #parentElement = document.querySelector('.recipe');
   #data;
+  #errorMessage = 'There is no recipe of this ID, Please try another ID';
+  #successMessage = '';
 
   render(data) {
     this.#data = data;
@@ -18,6 +20,36 @@ class RecipeView {
 
   addHandlerRender(handler) {
     ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
+  }
+
+  renderError(message = this.#errorMessage) {
+    const markup = `
+      <div class="error">
+            <div>
+              <svg>
+                <use href="${icons}#icon-alert-triangle"></use>
+              </svg>
+            </div>
+            <p>${message}</p>
+      </div>
+    `;
+    this.#clear();
+    this.#parentElement.insertAdjacentHTML('afterbegin', markup);
+  }
+
+  renderSuccess(message = this.#successMessage) {
+    const markup = `
+      <div class="message">
+            <div>
+              <svg>
+                <use href="${icons}#icon-smile"></use>
+              </svg>
+            </div>
+            <p>${message}</p>
+      </div>
+    `;
+    this.#clear();
+    this.#parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 
   spinner() {
