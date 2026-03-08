@@ -2,7 +2,6 @@
   "name": "forkify",
   "version": "1.0.0",
   "description": "",
-  "source": "index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "type": "module",
   "scripts": {
@@ -20,6 +19,7 @@
   },
   "dependencies": {
     "core-js": "^3.48.0",
+    "num2fraction": "^1.2.2",
     "regenerator-runtime": "^0.14.1"
   }
 }
