@@ -12,9 +12,12 @@ import searchView from './views/searchView';
 
 const controlRecipe = async function () {
   try {
-    // 1) Get recipe id
+    // 0) Get recipe id
     const id = window.location.hash.slice(1);
     if (!id) return;
+
+    // 1) Update result view to mark selected search result
+    resultView.update(model.getSearchResultPage());
 
     // 2) Display a spinner and load recipe
     recipeView.spinner();
@@ -58,8 +61,18 @@ const controlPagination = function (goToPage) {
   paginationView.render(model.state.search);
 };
 
+const controlServings = function (newServings) {
+  // 1) Update recipe serving (in the state)
+  model.updateServings(newServings);
+
+  // 2) Update recipe view
+  // recipeView.render(model.state.recipe);
+  recipeView.update(model.state.recipe);
+};
+
 const init = function () {
   recipeView.addHandlerRender(controlRecipe);
+  recipeView.addHandlerUpdateServings(controlServings);
   searchView.addHandlerSearch(controlSearchResult);
   paginationView.addHandlerClick(controlPagination);
 };
